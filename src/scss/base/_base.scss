@@ -1,0 +1,229 @@
+/*==================== BASE ====================*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 0 var(--header-height) 0;
+  font-family: var(--ff-body);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-size: var(--normal-font-size);
+
+  /*========== Variables Dark theme ==========*/
+  &.dark-theme {
+    /* HSL color mode */
+    --first-color-second: hsl(var(--hue-color), 30%, 8%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 75%);
+    --input-color: hsl(var(--hue-color), 29%, 16%);
+    --body-color: hsl(var(--hue-color), 28%, 12%);
+    --container-color: hsl(var(--hue-color), 29%, 16%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--fw-bold);
+  font-family: var(--ff-title);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section {
+  padding: 2rem 0 4rem;
+
+  &__title {
+    font-size: var(--h1-font-size);
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
+  }
+
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+}
+
+/*==================== LAYOUT ====================*/
+.container {
+  margin-left: var(--mb-1);
+  margin-right: var(--mb-1);
+
+  @media screen and (min-width: 350px) {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 990px;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+
+  .section {
+    padding: 6rem 0 2rem;
+
+    &__subtitle {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.25);
+}
+
+/*==================== BUTTONS ====================*/
+.button {
+  display: inline-block;
+  background-color: var(--cta-color);
+  color: var(--white-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: var(--first-color);
+  }
+
+  &__icon {
+    font-size: 1.125rem;
+    margin-left: var(--mb-0-5);
+    transition: 0.3s;
+  }
+
+  &--flex {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &--small {
+    padding: 0.75 rem 1rem;
+  }
+
+  &--link {
+    padding: 0;
+    background-color: transparent;
+    color: var(--cta-color);
+
+    &:hover {
+      background-color: transparent;
+      color: var(--first-color);
+    }
+  }
+
+  &--white {
+    background-color: var(--white-color);
+    color: var(--first-color);
+    &:hover {
+      background-color: var(--white-color);
+      color: var(--cta-color);
+    }
+  }
+}
+
+/*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  background-color: var(--cta-color);
+  opacity: 0.5;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  z-index: var(--z-tooltip);
+  transition: 0.3s;
+
+  &:hover {
+    background-color: var(--first-color);
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: var(--white-color);
+  }
+}
+/* Show scroll */
+.show-scroll {
+  bottom: 5rem;
+}
+
+/*========== SCROLL BAR ==========*/
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--scroll-bar-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
+  border-radius: 0.5rem;
+
+  &:hover {
+    background-color: var(--text-color-light);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    padding: 0 1rem;
+  }
+
+  .change-theme {
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    padding: 0;
+  }
+}

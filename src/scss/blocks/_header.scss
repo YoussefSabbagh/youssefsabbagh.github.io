@@ -1,0 +1,179 @@
+/*==================== Header ====================*/
+.header {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+
+  @media screen and (min-width: 768px) {
+    top: 0;
+    bottom: initial;
+    padding: 0 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding: 0;
+  }
+}
+
+/*==================== NAV ====================*/
+.nav {
+  margin-left: var(--mb-1);
+  margin-right: var(--mb-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (min-width: 350px) {
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+    column-gap: 1rem;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__menu {
+    position: fixed;
+    width: 100%;
+    bottom: -100%;
+    left: 0;
+    padding: 2rem 0.25rem 4rem;
+    background-color: var(--body-color);
+
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 1.5rem 1.5rem 0 0;
+    transition: 0.2s;
+
+    @media screen and (min-width: 350px) {
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-left: auto;
+      width: auto;
+      padding: 0 0.25rem;
+      position: initial;
+      bottom: initial;
+      box-shadow: initial;
+      border-radius: 0;
+      transition: 0.2s;
+    }
+  }
+
+  &__logo {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+
+    &:hover {
+      font-weight: var(--fw-bold);
+      color: var(--cta-color);
+    }
+  }
+
+  &__toggle {
+    color: var(--title-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &:hover {
+      font-weight: var(--fw-bold);
+      color: var(--cta-color);
+    }
+  }
+
+  &__list {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 0;
+
+    @media screen and (min-width: 350px) {
+      gap: 2rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      column-gap: 2rem;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    transition: transform 0.5s;
+
+    &:hover {
+      color: var(--cta-color);
+      transform: scale(1.1);
+    }
+  }
+
+  &__icon {
+    font-size: 1.2rem;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 1.3rem;
+    bottom: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.5s;
+    color: var(--title-color);
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+
+    &:hover {
+      color: var(--cta-color);
+      transform: scale(1.1);
+    }
+  }
+
+  /*========== Button Dark/Light ==========*/
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  /* show menu */
+  .show-menu {
+    bottom: 0;
+  }
+
+  /* Active link */
+  .active-link {
+    color: var(--cta-color);
+  }
+}
+
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-right: var(--mb-1);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--cta-color);
+  }
+}

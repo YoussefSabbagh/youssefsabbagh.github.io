@@ -1,0 +1,56 @@
+/*==================== QUALIFICATION ====================*/
+.qualification {
+  &__tabs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-1);
+
+    @media screen and (min-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    font-size: var(--h3-font-size);
+    cursor: pointer;
+    @media screen and (min-width: 768px) {
+      margin: 0 var(--mb-1);
+    }
+
+    &:hover {
+      color: var(--cta-color);
+    }
+  }
+  &__button.qualification__active {
+    color: var(--cta-color);
+  }
+
+  &__icon {
+    font-size: 1.8rem;
+    margin-right: var(--mb-0-25);
+  }
+
+  &__title {
+    font-size: var(--normal-font-size);
+    margin-top: 1rem;
+  }
+
+  &__subtitle {
+    display: inline-block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-1);
+  }
+
+  &__calendar {
+    font-size: var(--smaller-font-size);
+    color: var(--text-color);
+  }
+
+  & [data-content] {
+    display: none;
+  }
+
+  &__active[data-content] {
+    display: flex;
+  }
+}

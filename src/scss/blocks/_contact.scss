@@ -1,0 +1,49 @@
+/*==================== CONTACT ME ====================*/
+.contact {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  background-color: var(--first-color-lighter);
+  &__container {
+    row-gap: 0;
+  }
+
+  &__title {
+    color: var(--title-color);
+  }
+
+  &__content {
+    text-align: center;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .icon {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icono {
+    font-size: 3rem;
+    color: var(--title-color);
+    &:hover {
+      color: var(--cta-color);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/*==================== SKILLS ====================*/
+.skills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  background-color: var(--first-color-lighter);
+  &__container {
+    row-gap: 0;
+  }
+
+  &__title {
+    color: var(--title-color);
+  }
+
+  &__content {
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__content .devicon {
+    color: var(--first-color);
+    font-size: 3.5rem;
+    padding: 0.5rem;
+  }
+
+  &__icon {
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 0.5rem;
+    @media screen and (min-width: 3508px) {
+      margin-right: var(--mb-0-75);
+    }
+  }
+
+  &__name {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+  }
+}

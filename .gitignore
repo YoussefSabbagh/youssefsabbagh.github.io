@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+parcel-bundle-reports
+
+.DS_Store
+package-lock.json
+coverage
+.nyc_output
+dist
+lib
+.vscode/
+.idea/
+tmp
+
+# MIS
+.env
+
+# SASS
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
